@@ -35,7 +35,7 @@
 ------------------------------------------*/
 let breedList = document.querySelector(".breed-list")
 const petSpace = document.querySelector(".main")
-let amount = 19
+let amount = 39
 const allBreedsUrl = `https://dog.ceo/api/breeds/list/all`
 const url = `https://dog.ceo/api/breeds/image/random/${amount}`
 let allPets = []
