@@ -341,28 +341,31 @@ nav .container {
 }
 
 .nav-list {
-    position: absolute;
+    position: fixed;
     top: 70px;
     right: -100%;
-    overflow: hidden;
     transition: .3s;
     text-align: center;
 }
 
 .nav-list.active {
     right: 0;
-    background: #003496;
-    width: 40%;
+    background: var(--color-blue-30);
+    width: 45%;
     margin: 0 auto;
 }
 
 .nav-list li {
     list-style-type: none;
+    margin: 1rem 0;
+    width: 100%;
 }
 
 .nav-list a {
+    display: block;
     padding: 1rem;    
     color: var(--color-white);
+    width: 100%;
 }
 
 .nav-list a:hover {
