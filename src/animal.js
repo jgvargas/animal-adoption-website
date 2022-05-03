@@ -7,7 +7,6 @@
         - Some names assigned Undefined
         - Age should not be 0
 */
-
 /*----------------------------------------------------- 
  * Mobile Nav controls
  ----------------------------------------------------*/
@@ -18,9 +17,7 @@
      menu.classList.toggle('active');
      menuLinks.classList.toggle('active');
  })
-
-
-/*------------------------------------------
+/*----------------------------------------------------
     animal-adopt.html
 
     Create pets
@@ -32,7 +29,7 @@
 
     Handle breed filter
     -> 
-------------------------------------------*/
+---------------------------------------------------*/
 let breedList = document.querySelector(".breed-list")
 const petSpace = document.querySelector(".main")
 let amount = 39
@@ -48,7 +45,6 @@ function loadPage() {
     createPetProfile(amount)
     getDogData(url, "main")
 
-    
     //Creates sidebar
     getDogData(allBreedsUrl, "side")
     //console.log(allPets)

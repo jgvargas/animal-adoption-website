@@ -113,17 +113,19 @@ p {
     }
 
     p {
-
+        font-size: 1rem;
     }
 }
 
-
-
 /*--------------
-    Home page
+    Index page
 --------------*/
 .banner-home {
-    background: url(../img/adopt-banner.jpg);
+    background: url(../img/home-banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
 }
 
 @media screen and (min-width: 860px) {
@@ -342,6 +344,7 @@ nav .container {
     position: absolute;
     top: 70px;
     right: -100%;
+    overflow: hidden;
     transition: .3s;
     text-align: center;
 }
