@@ -46,6 +46,29 @@
     margin-bottom: 1rem;
 }
 
+.split {
+    display: flex;
+
+}
+
+.split > * {
+    flex-basis: 100%;
+}
+
+.theme-grey {
+    background: var(--color-grey-10);
+}
+
+.theme-blue {
+    background: var(--color-blue-10);
+    color: var(--color-white);
+}
+
+.theme-dark-blue {
+    background: var(--color-blue-30);
+    color: var(--color-white);
+}
+
 .btn {
     background: var(--color-blue-30);
     border: none;
@@ -81,8 +104,11 @@ img {
     .container {
         
     }
-}
 
+    .split {
+        flex-direction: column;
+    }
+}
 /*------------------
     Typography
 ------------------*/
@@ -161,6 +187,10 @@ p {
 
 .banner-text {
     text-align: left;
+    color: var(--color-white);
+}
+
+.theme-dark-blue h2 {
     color: var(--color-white);
 }
 
@@ -384,9 +414,7 @@ nav .container {
 /*--------------------------
     Footer 
 --------------------------*/
-footer {
-    background: var(--color-blue-30);
-}
+footer { background: var(--color-blue-30); }
 
 footer .container {
     color: var(--color-blue-10);
@@ -401,9 +429,7 @@ footer h2{
     font-size: 2rem;
 }
 
-footer button {
-    margin: 1rem 0;
-}
+footer button { margin: 1rem 0; }
 
 .footer-media {
     display: flex;
@@ -413,12 +439,10 @@ footer button {
     margin: .5rem 0;
 }
 
-.media-tray {
-    display: flex;
-}
+.media-tray { display: flex; }
 
 .media-tray a {
-    margin-left: 1rem;
+    margin: 0 .5rem;
     color: var(--color-blue-10);
 }
 
@@ -428,6 +452,7 @@ footer button {
 
 footer p {
     font-size: 1rem;
+    color: var(--color-grey-10);
 }
 
 @media screen and (min-width: 860px) {
