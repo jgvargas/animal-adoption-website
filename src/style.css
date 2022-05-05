@@ -17,7 +17,9 @@
     --color-netural-20: #502c1e;
     --color-black: #000;
 }
-
+/*---------------
+    General
+----------------*/
 * {
     margin: 0;
     padding: 0;
@@ -25,9 +27,6 @@
     box-sizing: border-box;
 }
 
-/*---------------
-    General
-----------------*/
 .container {
     width: 90%;
     max-width: 1300px;
@@ -45,6 +44,17 @@
     padding: 2rem;
     margin-bottom: 1rem;
 }
+
+section {
+    padding: 4rem;
+}
+
+.section-text {
+    font-size: 1.5em;
+    line-height: 1.5;
+    text-align: left;
+    word-wrap: break-word;
+  }
 
 .split {
     display: flex;
@@ -64,8 +74,16 @@
     color: var(--color-white);
 }
 
+.theme-blue .section-text {
+    color: var(--color-white);
+}
+
 .theme-dark-blue {
     background: var(--color-blue-30);
+    color: var(--color-blue-10);
+}
+
+.theme-dark-blue h2 {
     color: var(--color-white);
 }
 
@@ -108,6 +126,9 @@ img {
     .split {
         flex-direction: column;
     }
+    .split > * + * {
+        margin-bottom: 1rem;
+    }
 }
 /*------------------
     Typography
@@ -118,12 +139,19 @@ h1 {
     font-size: 5rem;
     font-weight: 600;
     letter-spacing: 0px;
+    margin-bottom: 1rem;
 }
 
-/*Section heading, */
+/*Section heading
+    font-size: 36px; 
+*/
 h2 {
     color: var(--color-blue-30);
     font-size: 5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-transform: uppercase;
 }
 
 p {
@@ -139,7 +167,7 @@ p {
     }
 
     p {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 }
 
@@ -190,8 +218,22 @@ p {
     color: var(--color-white);
 }
 
-.theme-dark-blue h2 {
-    color: var(--color-white);
+input[type="text"] {
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+}
+
+.form-control {
+    font-size: 1.5rem;
+}
+
+.list-supplies {
+    text-align: left;
+    font-size: 1.7em;
+    word-wrap: break-word;
+    word-break: break-word;
+    margin-left: 2rem;
 }
 
 @media (max-width: 860px) {
@@ -414,7 +456,10 @@ nav .container {
 /*--------------------------
     Footer 
 --------------------------*/
-footer { background: var(--color-blue-30); }
+footer { 
+    background: var(--color-blue-30); 
+    padding: 1.5rem;
+}
 
 footer .container {
     color: var(--color-blue-10);
