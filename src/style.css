@@ -205,10 +205,13 @@ p {
 
 .banner-support .container {
     align-items: flex-start;
-    border: 1px solid rebeccapurple;
     display: flex;
     flex-direction: column;
     height: 80%;
+}
+
+.banner-header {
+    color: var(--color-blue-30);
 }
 
 .banner-info {
@@ -222,6 +225,7 @@ p {
 .banner-text {
     text-align: left;
     color: var(--color-white);
+    margin-bottom: 1rem;
 }
 
 input[type="text"] {
@@ -387,6 +391,7 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.3rem;
 }
 
 #mobile-menu {
@@ -412,6 +417,10 @@ nav .container {
 
 #mobile-menu.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-logo {
+    margin: .5rem 0;
 }
 
 .nav-logo a {
@@ -466,6 +475,12 @@ nav .container {
 footer { 
     background: var(--color-blue-30); 
     padding: 1.5rem;
+}
+
+.support-footer h2,
+.support-footer p,
+.support-footer i{
+    color: var(--color-blue-30);
 }
 
 footer .container {
