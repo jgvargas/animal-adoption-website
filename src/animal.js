@@ -3,9 +3,11 @@
     - Mobile view
         - filter button system
     - Loading animation while waiting for API
-    - Random pet detail assignment
-        - Some names assigned Undefined
-        - Age should not be 0
+    
+    BUGS:
+    - Will not adjust the amount of pet icons if a specific breed only
+      a certain amount
+    - 
 */
 /*----------------------------------------------------- 
  * Mobile Nav controls
@@ -32,6 +34,8 @@
 ---------------------------------------------------*/
 let breedList = document.querySelector(".breed-list")
 const petSpace = document.querySelector(".main")
+const allBreeds = document.querySelector(".all-breeds")
+let selectedBreed = ''
 let amount = 39
 const allBreedsUrl = `https://dog.ceo/api/breeds/list/all`
 const url = `https://dog.ceo/api/breeds/image/random/${amount}`
@@ -50,6 +54,27 @@ function loadPage() {
     //console.log(allPets)
 }
 
+// On click function  /////////////////////////////////
+
+// All breeds
+allBreeds.addEventListener('click', ()=> {
+    getDogData(allBreedsUrl)
+})
+
+// Individual breed
+breedList.addEventListener('click', (event)=> {
+    // Will not update if breed is already selected
+    if(selectedBreed !== event.target.textContent && event.target.nodeName == "A") {
+        selectedBreed = event.target.textContent
+        console.log(selectedBreed.toLowerCase())
+        getDogData(`https://dog.ceo/api/breed/${selectedBreed.toLowerCase()}/images`)
+    }
+        
+})
+
+
+///////////////////////////////////////////////////////
+
 async function getDogData(url = '', content = 'main') {
     const res = await fetch(url)
 
@@ -57,6 +82,8 @@ async function getDogData(url = '', content = 'main') {
         throw new Error(`HTTP error! status: ${res.status}`)
     }
     data = await res.json()
+
+    console.log(data.message )
     
     content === 'main' ? 
         createPetInfo(data.message) :
@@ -92,26 +119,6 @@ function createLiElement(breedName) {
 }
 
 // Main adoption ///////////////////////////////////
-function createPetProfile(total) {
-    for(let i = 0; i < total ; i++) {
-        createBox()
-    }
-}
-
-function createBox() {
-    let petBox = `
-    <div class="pet-box">
-        <img class="pet-img" src="" alt="Dog for adoption">
-        <div class="pet-details">
-            <p class="pet-name">
-
-            </p>
-        </div>   
-    </div>
-    `
-    petSpace.innerHTML += petBox
-}
-
 function createPetInfo( dogImgArr) {
     let currentElement = petSpace.firstElementChild
     let i = 0
@@ -137,6 +144,26 @@ function createPetInfo( dogImgArr) {
         i++
     }
 
+}
+
+function createPetProfile(total) {
+    for(let i = 0; i < total ; i++) {
+        createBox()
+    }
+}
+
+function createBox() {
+    let petBox = `
+    <div class="pet-box">
+        <img class="pet-img" src="" alt="Dog for adoption">
+        <div class="pet-details">
+            <p class="pet-name">
+
+            </p>
+        </div>   
+    </div>
+    `
+    petSpace.innerHTML += petBox
 }
 
 function createPetBox(pet, profileElement) {

@@ -10,7 +10,8 @@
     --color-blue-30: #002a3a;
     --color-blue-20: #003496;
     --color-red-10: #db0032;
-    --color-pink-10: rgb(255, 195, 205);
+    --color-pink-10: rgb(250, 217, 222);
+    --color-pink-20: rgb(255, 195, 205);
 
     --color-white: #fff;
     --color-netural-10: rgb(241, 238, 238);
@@ -292,6 +293,14 @@ input[type="text"] {
 .sidebar h2 {
     font-size: 1.5rem;
 }
+.sidebar h2 a {
+    color: #002b54;
+    text-decoration: none;
+}
+
+.sidebar h2 a:hover {
+    color: #fff;
+}
 
 .search-bar {
     font-size: 1rem;
@@ -313,6 +322,7 @@ input[type="text"] {
     width: 100%;
 }
 
+.all-breeds,
 .breed-list a:hover {
     color: #fff;    
 }
